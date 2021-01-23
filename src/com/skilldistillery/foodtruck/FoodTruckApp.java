@@ -20,6 +20,7 @@ public class FoodTruckApp {
 		// Create and call user food truck input
 		fta.populateFoodTruck(sc, fta, foodTruckList);
 		FoodTruck[] allTrucks = foodTruckList.getFoodTrucks();
+		
 		// Create a while loop so the Menu keeps printing and user can interact
 		boolean flag = true;
 		while (flag) {
@@ -44,11 +45,7 @@ public class FoodTruckApp {
 
 			// Add Food truck to the array.
 			foodTruckList.addFoodTruck(ft);
-			;
 		}
-
-		// Handle a null input so user must enter at least 1 food truck
-
 	}
 
 	public FoodTruck getUserInput(Scanner sc, int num, FoodTruck ft) {
@@ -173,7 +170,8 @@ public class FoodTruckApp {
 			}
 		}
 		for (FoodTruck ft : allT) {
-			if (ft.getRating() == max) {
+			if (ft != null) {	
+			if (ft.getRating() == max)
 				ft.displayFoodTruck();
 			}
 		}
